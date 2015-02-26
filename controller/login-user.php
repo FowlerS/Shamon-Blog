@@ -1,4 +1,5 @@
 <?php
+//This page checks each login and verifys that it is true and not some other user.
     require_once(__DIR__ . "/../model/config.php");
     
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);

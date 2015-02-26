@@ -1,4 +1,5 @@
 <?php
+//This page allows anyone to create/register a user.
     require_once (__DIR__ . "/../model/config.php");
 ?>
 

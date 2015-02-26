@@ -1,4 +1,5 @@
 <?php
+//This is the login page for the blog where users can log in and use there accounts.
     require_once (__DIR__ . "/../model/config.php");
 ?>
 

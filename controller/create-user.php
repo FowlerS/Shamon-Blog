@@ -1,4 +1,5 @@
 <?php
+//Create user is what is sounds like, it allows you to create a user to post within the blog.
     require_once(__DIR__ . "/../model/config.php");
     
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
