@@ -7,7 +7,7 @@ class Database {
     private $username;
     private $password;
     private $database;
-    public
+    public $error;
 
     public function __construct($host, $username, $password, $database) {
         $this->host = $host;
@@ -27,10 +27,8 @@ class Database {
             $query = $this->connection->query("CREATE DATABASE $database");
 
             if ($query) {
-                echo "<p>Succesfully created database: " . $database . "</p>";
+                echo "<p>Successsfully created database: " . $database . "</p>";
             }
-        } else {
-            echo "<p>Database already exists.</p>";
         }
     }
 
@@ -43,7 +41,7 @@ class Database {
     }
 
     public function closeConnection() {
-        if (isset($this->connection)) {
+        if (isset($this->connecion)) {
             $this->connection->close();
         }
     }
@@ -52,6 +50,10 @@ class Database {
         $this->openConnection();
 
         $query = $this->connection->query($string);
+        
+        if(!$query) {
+            $this->error = $this->connection->error;
+        }
 
         $this->closeConnection();
 
